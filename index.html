@@ -3,87 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Text-editor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <title>Language Translator</title>
 </head>
 <body>
-    
     <div class="container">
-        <div class="option">
-            <button id="bold" class="option-button format">
-                <i class="fa-solid fa-bold"></i>
-            </button>
-            <button id="superscript" class="option-button script">
-                <i class="fa-solid fa-superscript"></i>
-            </button>
-            <button id="subscript" class="option-button script">
-                <i class="fa-solid fa-subscript"></i>
-            </button>
-
-            <button id="insertOrderedList" class="option-button">
-                <div class="fa-solid fa-list-ol"></div>
-            </button>
-            <button id="insertUnorderedList" class="option-button">
-                <i class="fa-solid fa-list"></i>
-            </button>
-
-            <button id="undo" class="option_button">
-                <i class="fa-solid fa-rotate-left"></i>
-            </button>
-            <button id="redo" class="option-button">
-                <i class="fa-solid fa-rotate-right"></i>
-            </button>
-
-            <button id="createLink" class="adv-option-button">
-                <i class="fa fa-link"></i>
-            </button>
-            <button id="unlink" class="option-button">
-                <i class="fa fa-unlink"></i>
-            </button>
-
-            <button id="justifyLeft" class="option-button align">
-                <i class="fa-solid fa-align-left"></i>
-            </button>
-            <button id="justifyCenter" class="option-button align">
-                <i class="fa-solid fa-align-center"></i>
-            </button>
-            <button id="justifyRight" class="option-button align">
-                <i class="fa-solid fa-align-right"></i>
-            </button>
-            <button id="justifyFull" class="option-button align">
-                <i class="fa-solid fa-align-justify"></i>
-            </button>
-            <button id="indent" class="option-button spacing">
-                <i class="fa-solid fa-indent"></i>
-            </button>
-            <button id="outdent" class="option-button spacing">
-                <i class="fa-solid fa-outdent"></i>
-            </button>
-
-            <select id="FormatBlock" class="adv-option-button">
-                <option value="H1">H1</option>
-                <option value="H2">H2</option>
-                <option value="H3">H3</option>
-                <option value="H4">H4</option>
-                <option value="H5">H5</option>
-                <option value="H6">H6</option>
-            </select>
-            <select id="fotnName" class="adv-option-button"></select>
-            <select id="fontSize" class="adv-option-button"></select>
-
-            <div class="input-wrapper">
-                <input type="color" id="foreColor" class="adv-option-button">
-                <label for="foreColor">Колір шрифту</label>
+        <div class="wrapper">
+            <div class="text-input">
+                <textarea spellcheck="false" class="from-text" placeholder="Enter Text"></textarea>
+                <textarea spellcheck="false" readonly disabled class="to-text" placeholder="Translation"></textarea>
             </div>
-            <div class="input-wrapper">
-                <input type="color" id="backColor" class="adv-option-button">
-                <label for="backColor">Колір виділення</label>
-            </div>
+            <ul class="controls">
+                <li class="row from">
+                    <div class="icons">
+                        <i id="from" class="fas fa-volume-up"></i>
+                        <i id="from" class="fas fa-copy"></i>
+                    </div>
+                    <select></select>
+                </li>
+                <li class="exchage"><i class="fas fa-exchage-alt"></i></li>
+                <li class="row to">
+                    <select></select>
+                    <div class="icons">
+                        <i id="to" class="fa fa-volume-up"></i>
+                        <i id="to" class="fas fa-copy"></i>
+                    </div>
+                </li>
+            </ul>
         </div>
-        <div id="text-input" contenteditable="true"></div>
+        <button>Translate Text</button>
     </div>
 
+    <script src="countries.js"></script>
     <script src="script.js"></script>
+
 </body>
 </html>
